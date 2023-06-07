@@ -1,7 +1,4 @@
 public with sharing class OlderAccountsUtility {
-    public OlderAccountsUtility() {
-
-    }
 
     public static void updateOlderAccounts() {
         // Get the 5 oldest accounts
