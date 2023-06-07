@@ -10,6 +10,7 @@ public with sharing class OlderAccountsUtility {
         for (Account acct : oldAccounts) {
             acct.Description = 'Heritage Account';
         }
+        System.debug('Last 5 Account Fetched ' + oldAccounts);
         // save the change you made
         update oldAccounts;
       }
