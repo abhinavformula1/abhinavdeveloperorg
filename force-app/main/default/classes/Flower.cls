@@ -1,8 +1,17 @@
 public class Flower {
-    public static void wilt(Integer numberOfPetals){
+    public static Integer wilt(Integer numberOfPetals){
         if(numberOfPetals >= 1){
-            System.debug('Number of Petels : '+ numberOfPetals);
             numberOfPetals--;
         }
+        return numberOfPetals;
+    }
+    public static void grow(Integer height, Integer maxHeight){
+        height = height + 2;
+        if(height >= maxHeight){
+            pollinate();
+        }
+    }
+    public static void pollinate(){
+        System.debug('Pollinating...');
     }
 }
