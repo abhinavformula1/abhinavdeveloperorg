@@ -1,16 +1,13 @@
 public class AccountProcessor {
     
     @future(callout = false)
-    public static void countContacts(List<Id> AccountIds){
-        List<Account> listAccount = [SELECT Id, Name,Number_Of_Contacts__c, (SELECT Id, Name from Contacts) FROM Account WHERE Id In: AccountIds];
-        List<Account> listAccountToUpdate = new List<Account>();
-        for(Account acc : listAccount){
-            acc.Number_Of_Contacts__c = acc.contacts.size();
-            listAccountToUpdate.add(acc);
+    public static void countContacts(List<Id> AccountId){
+        List<Account> lstAccount = [SELECT Id,Number_Of_Contacts__c, (SELECT Id from Contacts) from Account where Id =: AccountId];
+        List<Account> updateListAccount = new List<Account>();
+        for(Account acct : lstAccount){
+            acct.Number_Of_Contacts__c = acct.Contacts.size();
+            updateListAccount.add(acct);
         }
-        if(listAccountToUpdate.size()>0){
-            update listAccountToUpdate;
-        }
+        update updateListAccount;
     }
-
 }

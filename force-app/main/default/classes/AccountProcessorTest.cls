@@ -1,17 +1,30 @@
-@isTest
+@IsTest
 public class AccountProcessorTest {
-	
-    @isTest static void countContactsTest(){
-        Account acc1 = new Account(Name='Acc1');
-        Account acc2 = new Account(Name='Acc2');
-        List<Account> listAccount = new List<Account>();
-        listAccount.add(acc1);
-        listAccount.add(acc2);
-        insert listAccount;
-        List<Id> AccountIds = new List<Id>();
-        AccountIds.add(listAccount[0].Id);
+    
+    private static void countContactsTest(){
+        
+        //Load Test Data
+        List<Account> accounts = new List<Account>();
+        for(Integer i=0; i<300; i++){
+            accounts.add(new Account(name='Test Account' + i));
+        }
+        insert accounts;
+        
+        List<Contact> contacts = new List<Contact>();
+        List<Id> accountIds = new List<Id>();
+
+        for(Account acc : accounts){
+            contacts.add(new contact(FirstName=acc.Name, LastName='TestContact', AccountId=acc.Id));
+            accountIds.add(acc.Id);
+        }
+        insert contacts;
+
+        // Do the test
+
         Test.startTest();
-        AccountProcessor.countContacts(AccountIds);
+        AccountProcessor.countContacts(accountIds);
         Test.stopTest();
-    }
+        
+  }
+ 
 }
