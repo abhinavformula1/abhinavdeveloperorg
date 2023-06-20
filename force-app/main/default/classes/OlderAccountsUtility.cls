@@ -40,10 +40,7 @@ public with sharing class OlderAccountsUtility {
 
       //SELECT Status__c, Broker__r.Name FROM Property__c
 
-      wilt(4);
-      public static void wilt(Integer numberOfPetals){
-      system.debug(numberOfPetals);
-      }
+      
 
       }
 }
