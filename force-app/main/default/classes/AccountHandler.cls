@@ -2,7 +2,7 @@ public with sharing class AccountHandler {
     
     public static void insertAccount(Integer numberOfNewAccounts){
         List<Account> addAccounts = new List<Account>();
-
+        Account asdfsf = new Account();
         while(numberOfNewAccounts >= 0){
             
             Account acct = new Account();
@@ -13,5 +13,6 @@ public with sharing class AccountHandler {
         }
         insert addAccounts;
         System.debug('Account List '+addAccounts);
+
     }
 }
