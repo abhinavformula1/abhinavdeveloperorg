@@ -1,16 +1,14 @@
 public class DailyLeadProcessor Implements Schedulable {
 
     public static void execute(SchedulableContext sc){
-       // The execute method must find the first 200 Lead records with a blank LeadSource field
-       // and update them with the LeadSource value of Dreamforce
-       // 
-       List<Lead> Leads = [Select Id, name from Lead where LeadSource='' Limit 200];
-       List<Lead> listLead =  new List<Lead>();
        
-        for(Lead ld : Leads){
-            ld.LeadSource='Dreamforce';
-            listLead.add(ld);
+        List<Lead> lstLead = [SELECT Id, LeadSource from Lead WHERE LeadSource = '' Order By Createddate desc LIMIT 200];
+        List<Lead> updateListLead = new List<Lead>();
+
+        for (Lead lead : lstLead){
+            lead.LeadSource = 'Dreamforce';
+            updateListLead.add(lead);
         }
-        update listLead;
+        update updateListLead;
     }
 }
