@@ -9,4 +9,4 @@ export default class DateOverride extends omniscriptDate {
     } renderedCallback() {
         console.log('inside rendered callback')
     }
-}
+} 
