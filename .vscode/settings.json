@@ -5,5 +5,6 @@
     "**/.sfdx": true
   },
   "vlocity.sfdxUsername": "abhinavformula1@gmail.com",
-  "salesforcedx-vscode-core.push-or-deploy-on-save.enabled": true 
+  "salesforcedx-vscode-core.push-or-deploy-on-save.enabled": true,
+  "vlocity.salesforce.apiVersion": "48.0"
 }
