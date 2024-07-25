@@ -1,0 +1,9 @@
+<template>
+    <template if:true={itemList.length}>
+        <ul>
+            <template for:each={itemList} for:item="item">
+                <li key={item}>{item}</li>
+            </template>
+        </ul>
+    </template>
+</template>
