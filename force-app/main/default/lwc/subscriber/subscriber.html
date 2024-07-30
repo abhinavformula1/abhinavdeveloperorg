@@ -1,9 +1,11 @@
 <template>
-    <template if:true={itemList.length}>
-        <ul>
-            <template for:each={itemList} for:item="item">
-                <li key={item}>{item}</li>
-            </template>
-        </ul>
-    </template>
+        <template lwc:if={itemList.length}>
+            <lightning-card title="subscriber" icon-name="standard:lead_list">
+                    <ul>
+                        <template for:each={itemList} for:item="item">
+                            <li key={item}>{item}</li>
+                        </template>
+                    </ul>
+            </lightning-card>
+        </template>
 </template>

@@ -1,18 +1,23 @@
 <template>
     <lightning-card title="publisher" icon-name="standard:events">
-        <div class="slds-grid slds-wrap slds-p-around_x-small slds-align_absolute-center">
-            <div class="slds-col slds-size_1-of-3">
-                <lightning-input label="item" name="Item" onchange={handleChange}></lightning-input>
-            </div>
-            <div class="slds-col slds-size_1-of-1 slds-align_absolute-center slds-p-top_small">
-                <lightning-button label="publish" variant="brand" onclick={handleClick}></lightning-button>
-            </div>
+        <div>
+            <lightning-input
+                type="text"
+                label="Enter the Task Name"
+                name="Item"
+                placeholder="Enter the Task Name to be Published"
+                onchange={handleChange}>
+            </lightning-input>
+            <lightning-button 
+                type ="button"
+                variant="brand"
+                label="publish"
+                icon-name="standard:events"
+                icon-position="right"
+                title="Publish the Task"
+                class="slds-m-centre_x-small slds-align_absolute-center"
+                onclick={handleClick}>
+            </lightning-button>
         </div>
     </lightning-card>
-    
 </template>
-<!-- 
-<template>
-    <lightning-input label="Enter ToDo" onchange={handleChange}></lightning-input>
-    <lightning-button label="Add ToDo" onclick={handleClick}></lightning-button>
-</template> -->
